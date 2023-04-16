@@ -27,14 +27,14 @@ spec:
         app: dso-demo
     spec:
       containers:
-        - name: dso-demo
-          image: fdjapi10/dsodemo:latest
-            - containerPort: 9000
-          volumeMounts:
-            - name: demo-extensions
-              mountPath: /opt/sonarqube/extensions
-      volumes:
+      - name: dso-demo
+        image: fdjapi10/dsodemo:latest
+        ports:
+        - containerPort: 9000
+        volumeMounts:
         - name: demo-extensions
-          persistentVolumeClaim:
-            claimName: demo-pvc
-
+          mountPath: /opt/sonarqube/extensions
+      volumes:
+      - name: demo-extensions
+        persistentVolumeClaim:
+          claimName: demo-pvc
