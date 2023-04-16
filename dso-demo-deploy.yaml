@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dso-demo
+  name: dso-demo-dpl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dso-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dso-demo
+    spec:
+      containers:
+        - image: fdjapi10/dsodemo:latest
+          name: dso-demo
+          ports:
+          - containerPort: 9000
+      
