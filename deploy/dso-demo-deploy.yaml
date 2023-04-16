@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: dso-demo
-        image: fdjapi10/dsodemo:latest
+        image: fdjapi10/sonarqube:staging-9.9.0.65466
         ports:
         - containerPort: 9000
         volumeMounts:
